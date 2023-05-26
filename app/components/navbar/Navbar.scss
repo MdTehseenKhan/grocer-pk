@@ -1,0 +1,137 @@
+.navbar {
+    @apply 
+    py-4 
+    shadow-md 
+    w-full 
+    sticky 
+    z-10 
+    bg-gray-900 
+    text-white;
+
+    .layout {
+        @apply 
+        flex 
+        flex-row 
+        items-center 
+        justify-between;
+
+        .logo {
+            @apply 
+            flex 
+            flex-row 
+            items-center 
+            gap-3;
+
+            div {
+                @apply 
+                relative 
+                h-10 
+                w-10;
+            }
+            span {
+                @apply 
+                hidden 
+                md:block 
+                font-bold 
+                text-2xl;
+            }
+        }
+
+        .search {
+            @apply 
+            py-2 
+            md:border 
+            text-sm 
+            rounded-full 
+            shadow-sm 
+            hover:shadow-md 
+            cursor-pointer;
+
+            .searchBox {
+                @apply 
+                px-2 
+                flex 
+                flex-row 
+                items-center;
+
+                input {
+                    @apply 
+                    w-0 
+                    md:w-auto 
+                    outline-none 
+                    md:px-4 
+                    bg-inherit;
+                }
+
+                button {
+                    @apply 
+                    p-2 
+                    bg-green-500 
+                    hover:bg-green-600 
+                    rounded-full 
+                    text-white
+                }
+            }
+        }
+        
+        .navRight {
+            @apply 
+            relative 
+            flex 
+            flex-row 
+            items-center 
+            gap-3;
+
+            .loginBtn {
+                @apply 
+                text-white 
+                font-bold 
+                bg-green-500 
+                hover:bg-green-600 
+                rounded-lg 
+                px-4 
+                py-2;
+            }
+        
+            .menuBtn {
+                @apply 
+                px-4 
+                py-2 
+                border 
+                border-neutral-200 
+                flex 
+                flex-row 
+                items-center 
+                gap-3 
+                rounded-full 
+                cursor-pointer 
+                hover:shadow-md;
+            }
+        
+            .menu {
+                @apply 
+                absolute 
+                right-0 
+                top-full 
+                flex 
+                flex-col 
+                rounded-xl 
+                shadow-md 
+                shadow-gray-800 
+                overflow-hidden 
+                text-sm 
+                cursor-pointer 
+                whitespace-nowrap 
+                bg-gray-900;
+                                
+                .menuItem {
+                    @apply 
+                    px-4 
+                    py-3 
+                    hover:bg-gray-700 
+                    font-semibold;
+                }  
+            }
+        }
+    } 
+}

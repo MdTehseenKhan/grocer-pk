@@ -1,0 +1,20 @@
+.pagination {
+    @apply flex w-full justify-center mx-auto;
+
+    .pagination-container {
+        @apply inline-flex -space-x-px rounded-lg;
+
+        .pagination-navigation {
+            @apply py-2 
+            px-3 leading-tight border bg-gray-800 border-gray-700 text-gray-400 hover:bg-gray-700 hover:text-white;
+        }
+        
+        .pagination-btn {
+            @apply py-2 px-3 leading-tight border bg-gray-800 border-gray-700 text-gray-400 hover:bg-gray-700 hover:text-white;
+        }
+        
+        .pagination-btn.active {
+            @apply hover:bg-green-100 hover:text-green-700 bg-gray-700 text-white;
+        }
+    }
+}
