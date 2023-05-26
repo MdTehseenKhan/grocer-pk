@@ -1,7 +1,7 @@
 "use client"
 import Link from "next/link"
 
-import { useCallback, useState } from "react"
+import { useState } from "react"
 import { AiOutlineMenu } from "react-icons/ai"
 
 import { Avatar } from "@/app/components"

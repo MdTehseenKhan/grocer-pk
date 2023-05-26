@@ -1,7 +1,7 @@
 "use client"
 import Link from "next/link"
 import Image from "next/image"
-import { useCallback, useState } from "react"
+import { useState } from "react"
 
 import { Container, Avatar } from "@/app/components"
 import { SearchIcon, MenuIcon } from "@/assets/icons"
