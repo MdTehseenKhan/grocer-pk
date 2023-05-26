@@ -1,17 +1,18 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 
 import { HomeIcon, DashboardIcon, CategoryIcon, ProductIcon, UsersIcon, LogoutIcon } from "@/assets/icons"
 
 const sideBar = [
-  {
-    id: "side0",
-    item: "Home",
-    link: "/",
-    Icon: HomeIcon,
-  },
+  // {
+  //   id: "side0",
+  //   item: "Home",
+  //   link: "/",
+  //   Icon: HomeIcon,
+  // },
   {
     id: "side1",
     item: "Dashboard",
@@ -51,6 +52,7 @@ export default function SideNav() {
           flex-col
           justify-between
           bg-gray-900
+          text-white
           z-10
         "
     >
@@ -64,6 +66,12 @@ export default function SideNav() {
             text-sm
       "
       >
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-3">
+          <Image src="/images/logo.png" alt="Logo" width={40} height={40} />
+          <span className="hidden md:block font-bold text-2xl">Grocer</span>
+        </Link>
+
         {sideBar?.map(({ id, item, link, Icon }) => (
           <Link
             key={id}
@@ -78,7 +86,6 @@ export default function SideNav() {
                 flex
                 lg:gap-5
                 items-center
-                text-white
                 hover:bg-gray-700
                 cursor-pointer
                 ${pathname === link ? "bg-gradient-to-br from-green-500 to-green-700 hover:to-green-900 font-bold" : ""}
@@ -90,7 +97,7 @@ export default function SideNav() {
         ))}
       </div>
 
-      <div className="p-4">
+      {/* <div className="p-4">
         <Link
           href="/"
           className="
@@ -111,7 +118,7 @@ export default function SideNav() {
           <LogoutIcon className="w-7 h-7" />
           <span className="hidden lg:block pr-5">Logout</span>
         </Link>
-      </div>
+      </div> */}
     </aside>
   )
 }

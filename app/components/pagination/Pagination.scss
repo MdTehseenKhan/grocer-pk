@@ -5,8 +5,7 @@
         @apply inline-flex -space-x-px rounded-lg;
 
         .pagination-navigation {
-            @apply py-2 
-            px-3 leading-tight border bg-gray-800 border-gray-700 text-gray-400 hover:bg-gray-700 hover:text-white;
+            @apply py-2 px-3 leading-tight border bg-gray-800 border-gray-700 text-gray-400 hover:bg-gray-700 hover:text-white;
         }
         
         .pagination-btn {

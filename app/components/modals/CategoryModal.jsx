@@ -9,7 +9,9 @@ import Modal from "./Modal"
 import Input from "../inputs/Input"
 import { createPortal } from "react-dom"
 
-const ProductModal = ({ isOpen, onClose }) => {
+const BASE_URL = ""
+
+const CategoryModal = ({ isOpen, name = "", title, actionLabel }) => {
   const [hasMounted, setHasMounted] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
@@ -19,27 +21,25 @@ const ProductModal = ({ isOpen, onClose }) => {
     formState: { errors },
   } = useForm({
     defaultValues: {
-      name: "",
-      email: "",
-      password: "",
+      name,
     },
   })
 
-  // const onSubmit = (data) => {
-  //   setIsLoading(true)
+  const onSubmit = (data) => {
+    setIsLoading(true)
 
-  //   axios
-  //     .post("/api/register", data)
-  //     .then(() => {
-  //       toast.success("Registered!")
-  //     })
-  //     .catch((error) => {
-  //       toast.error(error)
-  //     })
-  //     .finally(() => {
-  //       setIsLoading(false)
-  //     })
-  // }
+    axios
+      .post(`${BASE_URL}/category/add`, data)
+      .then(() => {
+        toast.success("Category Added Sucessfully!")
+      })
+      .catch((error) => {
+        toast.error("Category not added!")
+      })
+      .finally(() => {
+        setIsLoading(false)
+      })
+  }
 
   useEffect(() => {
     setHasMounted(true)
@@ -51,10 +51,9 @@ const ProductModal = ({ isOpen, onClose }) => {
     <Modal
       disabled={isLoading}
       isOpen={isOpen}
-      title="Add Category"
-      actionLabel="Add"
-      onClose={onClose}
-      // onSubmit={handleSubmit(onSubmit)}
+      title={title}
+      actionLabel={actionLabel}
+      onSubmit={handleSubmit(onSubmit)}
     >
       {/* body */}
       <div className="">
@@ -65,4 +64,4 @@ const ProductModal = ({ isOpen, onClose }) => {
   )
 }
 
-export default ProductModal
+export default CategoryModal

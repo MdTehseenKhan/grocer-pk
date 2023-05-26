@@ -2,17 +2,17 @@
 
 import "./Pagination.scss"
 
-export default function Pagination() {
-  // export default function Pagination({ totalNumberOfData, currentPage, setCurrentPage, dataPerPage = 10 }) {
-  const { totalNumberOfData, currentPage, setCurrentPage, dataPerPage } = {
-    totalNumberOfData: 20,
-    dataPerPage: 2,
-    currentPage: 1,
-    setCurrentPage: () => {},
-  }
+// export default function Pagination() {
+export default function Pagination({ totalNumberOfData, currentPage, setCurrentPage, dataPerPage = 10 }) {
+  // const { totalNumberOfData, currentPage, setCurrentPage, dataPerPage } = {
+  //   totalNumberOfData: 20,
+  //   dataPerPage: 2,
+  //   currentPage: 1,
+  //   setCurrentPage: () => {},
+  // }
   const totalNumberOfPages = Math.ceil(totalNumberOfData / dataPerPage)
 
-  // if (totalNumberOfPages <= 0) return
+  if (totalNumberOfPages <= 1) return
 
   const numberOfPages = []
   for (let i = 1; i <= totalNumberOfPages; i++) {

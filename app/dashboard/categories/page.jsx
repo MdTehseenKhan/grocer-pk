@@ -4,9 +4,29 @@ import { Button, CategoriesTable, CategoryModal, Pagination, Search } from "@/ap
 import { useState } from "react"
 import { HiPlus } from "react-icons/hi2"
 
-const headCols = ["Category Name"]
-const data = new Array(30).fill("Category")
-
+const headCols = ["Category Name", "Actions"]
+const data = [
+  {
+    id: 1,
+    name: "category",
+  },
+  {
+    id: 1,
+    name: "category",
+  },
+  {
+    id: 1,
+    name: "category",
+  },
+  {
+    id: 1,
+    name: "category",
+  },
+  {
+    id: 1,
+    name: "category",
+  },
+]
 export default function Categories() {
   const [currentPage, setCurrentPage] = useState(1)
   const [isOpen, setIsOpen] = useState(false)
@@ -59,7 +79,7 @@ export default function Categories() {
         </nav>
       </div>
 
-      <CategoryModal isOpen={isOpen} onClose={handleModalOpen} />
+      <CategoryModal title="Add Category" actionLabel="Add" isOpen={isOpen} onClose={handleModalOpen} />
     </section>
   )
 }

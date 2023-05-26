@@ -7,7 +7,6 @@ import { Button } from "@/app/components"
 
 const Modal = ({
   isOpen,
-  onClose,
   onSubmit,
   title,
   children,
@@ -29,8 +28,7 @@ const Modal = ({
     }
 
     setShowModal(false)
-    onClose()
-  }, [onClose, disabled])
+  }, [disabled])
 
   const handleSubmit = useCallback(() => {
     if (disabled) {
@@ -38,6 +36,7 @@ const Modal = ({
     }
 
     onSubmit()
+    // setShowModal(false)
   }, [onSubmit, disabled])
 
   const handleSecondaryAction = useCallback(() => {

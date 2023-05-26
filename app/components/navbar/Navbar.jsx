@@ -42,21 +42,10 @@ export default function Navbar() {
       <Container>
         <div className="flex flex-row items-center justify-between">
           {/* Logo */}
-          <div
-            className="
-              flex 
-              flex-row 
-              items-center 
-              gap-3
-            "
-          >
-            <div className="relative h-10 w-10">
-              <Link href="/">
-                <Image src="/images/logo.png" alt="Logo" fill />
-              </Link>
-            </div>
+          <Link href="/" className="flex items-center gap-3">
+            <Image src="/images/logo.png" alt="Logo" width={40} height={40} />
             <span className="hidden md:block font-bold text-2xl">Grocer</span>
-          </div>
+          </Link>
 
           <div className="relative flex flex-row items-center gap-3">
             {/* Search */}

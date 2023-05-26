@@ -21,10 +21,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={font.className}>
         <div id="modal"></div>
-        <ClientOnly>
+        {/* <ClientOnly>
           <Navbar />
         </ClientOnly>
-        <div className="pt-20"></div>
+        <div className="pt-20"></div> */}
         <Suspense fallback={<Loader />}>{children}</Suspense>
       </body>
     </html>

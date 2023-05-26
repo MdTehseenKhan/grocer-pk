@@ -4,7 +4,7 @@ import { Button, Pagination, ProductModal, ProductsTable, Search } from "@/app/c
 import { useState } from "react"
 import { HiPlus } from "react-icons/hi2"
 
-const headCols = ["Product Name", "Category", "Price", "Description", "Active"]
+const headCols = ["Product Name", "Category", "Price", "Description", "Active", "Actions"]
 const data = [
   {
     name: "Demo",
