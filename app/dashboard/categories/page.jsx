@@ -1,37 +1,51 @@
 "use client"
 
 import { Button, CategoriesTable, CategoryModal, Pagination, Search } from "@/app/components"
-import { useState } from "react"
+import axios from "axios"
+import { useEffect, useState } from "react"
+import { toast } from "react-hot-toast"
 import { HiPlus } from "react-icons/hi2"
 
 const headCols = ["Category Name", "Actions"]
 const data = [
   {
     id: 1,
-    name: "category",
+    name: "Category",
   },
   {
     id: 1,
-    name: "category",
+    name: "Category",
   },
   {
     id: 1,
-    name: "category",
+    name: "Category",
   },
   {
     id: 1,
-    name: "category",
-  },
-  {
-    id: 1,
-    name: "category",
+    name: "Category",
   },
 ]
+
 export default function Categories() {
   const [currentPage, setCurrentPage] = useState(1)
   const [isOpen, setIsOpen] = useState(false)
+  // const [data, setData] = useState()
 
   const handleModalOpen = () => setIsOpen((p) => !p)
+
+  // useEffect(() => {
+  //   axios
+  //     .get("https://grocer-api.vercel.app/category/all")
+  //     .then(({ success, data }) => {
+  //       if (!success) return
+  //       console.log(data)
+  //       setData(data)
+  //     })
+  //     .catch(() => {
+  //       console.log("error")
+  //       toast.error("Something went wrong!")
+  //     })
+  // }, [data])
 
   return (
     <section
@@ -75,7 +89,7 @@ export default function Categories() {
         <CategoriesTable data={data} headCols={headCols} />
 
         <nav className="flex justify-center p-4">
-          <Pagination totalNumberOfData={data.length} currentPage={currentPage} setCurrentPage={setCurrentPage} />
+          <Pagination totalNumberOfData={data?.length} currentPage={currentPage} setCurrentPage={setCurrentPage} />
         </nav>
       </div>
 

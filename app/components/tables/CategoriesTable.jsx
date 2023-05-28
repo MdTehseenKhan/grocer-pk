@@ -1,14 +1,14 @@
-import { DeleteIcon, EditIcon } from "@/assets/icons"
+"use client"
+
+import { DeleteIcon } from "@/assets/icons"
 import { Toaster, toast } from "react-hot-toast"
 import TableHead from "./TableHead"
 import axios from "axios"
 
-const BASE_URL = ""
-
 const CategoriesTable = ({ data, headCols }) => {
   const handleDeleteCategory = (id) => {
     axios
-      .delete(`${BASE_URL}/category/delete/${id}`)
+      .delete(`https://grocer-api.vercel.app/category/delete/${id}`)
       .then(() => {
         toast.success("Category Deleted Successfully")
       })
@@ -25,18 +25,19 @@ const CategoriesTable = ({ data, headCols }) => {
         <TableHead cols={headCols} />
 
         <tbody>
-          {data?.map(({ id, name }, i) => (
-            <tr key={i + name} className="border-b border-gray-700 hover:bg-gray-600">
-              <th className="px-4 py-3 font-medium whitespace-nowrap text-white">{name + " " + (i + 1)}</th>
+          {data &&
+            data?.map(({ id, name }, i) => (
+              <tr key={i + name} className="border-b border-gray-700 hover:bg-gray-600">
+                <th className="px-4 py-3 font-medium whitespace-nowrap text-white">{name + " " + (i + 1)}</th>
 
-              <td>
-                <button onClick={() => handleDeleteCategory(id)} className="flex gap-2 hover:text-gray-200">
-                  <DeleteIcon className="w-5 h-5 text-red-600" />
-                  Delete
-                </button>
-              </td>
-            </tr>
-          ))}
+                <td>
+                  <button onClick={() => handleDeleteCategory(id)} className="flex gap-2 hover:text-gray-200">
+                    <DeleteIcon className="w-5 h-5 text-red-600" />
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
         </tbody>
       </table>
     </div>
