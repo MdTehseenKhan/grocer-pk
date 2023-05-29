@@ -67,7 +67,7 @@ export default function SideNav() {
       "
       >
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3">
+        <Link href="/" className="flex justify-center lg:justify-start items-center gap-3">
           <Image src="/images/logo.png" alt="Logo" width={40} height={40} />
           <span className="hidden lg:block font-bold text-2xl">Grocer</span>
         </Link>
