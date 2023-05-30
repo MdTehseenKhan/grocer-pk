@@ -1,19 +1,19 @@
 "use client"
 
-import { PuffLoader } from "react-spinners"
+import { HashLoader } from "react-spinners"
 
 const Loader = () => {
   return (
     <div
       className="
-      h-[70vh]
+      h-screen
+      w-full
       flex 
-      flex-col 
       justify-center 
       items-center 
     "
     >
-      <PuffLoader size={100} color="green" />
+      <HashLoader size={100} color="green" />
     </div>
   )
 }
